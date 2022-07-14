@@ -1,0 +1,20 @@
+# Sample service
+# VIRTUAL_HOST is used by "jwilder/nginx-proxy" to redirect traffic to right docker container.
+# LETSENCRYPT_HOST and LETSENCRYPT_EMAIL are used by "jrcs/letsencrypt-nginx-proxy-companion" to create SSL certificates.
+version: '3'
+
+services:
+
+  nginx:
+    image: nginx
+    container_name: my_super_service
+    restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: my-domain.com
+      LETSENCRYPT_HOST: my-domain.com
+      LETSENCRYPT_EMAIL: no-reply@my-domain.com
+
+networks:
+  default:
+    external:
+      name: certified
