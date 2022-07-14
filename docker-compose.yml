@@ -53,7 +53,7 @@ services:
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-#      - /root/.docker/config.json:/config.json
+#      - /root/.docker/config.json:/config.json # docker credentials
     command: --interval 60 --cleanup
     logging:
       driver: "json-file"
