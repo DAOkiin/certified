@@ -10,7 +10,6 @@ services:
     ports: [ "80:80", "443:443" ]
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./custom-nginx.conf:/etc/nginx/conf.d/custom-nginx.conf:ro
       - ./nginx-data/conf.d:/etc/nginx/conf.d
       - ./nginx-data/vhost.d:/etc/nginx/vhost.d
       - ./nginx-data/html:/usr/share/nginx/html
